@@ -3,54 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MENU_ITEMS, CATEGORIES, HOTLINKS, CATEGORY_IMAGES, getFoodItemImage } from '../data';
 import { MenuItem } from '../types';
 import { Search, Sparkles, Filter, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { OptimizedImage } from './OptimizedImage';
-
-// Viewport-based lazy category renderer to optimize DOM rendering and image requests
-const LazyCategorySection: React.FC<{ children: React.ReactNode; isAllMode: boolean }> = ({ children, isAllMode }) => {
-  const [isIntersecting, setIsIntersecting] = useState(!isAllMode);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!isAllMode) {
-      setIsIntersecting(true);
-      return;
-    }
-    if (typeof window === 'undefined' || !window.IntersectionObserver) {
-      setIsIntersecting(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '350px' } // Load 350px before entering viewport
-    );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => observer.disconnect();
-  }, [isAllMode]);
-
-  return (
-    <div ref={ref} className="w-full animate-fade-in" style={{ minHeight: isIntersecting ? 'auto' : '450px' }}>
-      {isIntersecting ? (
-        children
-      ) : (
-        <div className="w-full h-[450px] bg-stone-900/10 border border-white/[0.01] rounded-2xl animate-pulse flex items-center justify-center">
-          <span className="font-subheader text-[10px] tracking-[0.2em] text-stone-600">LOADING ROYAL COURSES...</span>
-        </div>
-      )}
-    </div>
-  );
-};
 
 interface MenuViewProps {
   selectedCategory: string;
@@ -221,7 +178,7 @@ export const MenuView: React.FC<MenuViewProps> = ({
               
               {/* Visual Featured Image Column */}
               <div className="lg:col-span-5 w-full h-[220px] md:h-[320px] lg:h-[520px] overflow-hidden relative pointed-arch-box border border-antique-gold/20 shadow-[0_20px_45px_rgba(0,0,0,0.85)] group">
-                <OptimizedImage
+                <img
                   alt="All Bawarchi Delicacies"
                   className="w-full h-full object-cover origin-center scale-100 group-hover:scale-105 transition-transform duration-[2.5s] ease-out select-none"
                   src={HOTLINKS.heroBiryani}
@@ -324,111 +281,109 @@ export const MenuView: React.FC<MenuViewProps> = ({
             if (sectionItems.length === 0) return null;
 
             return (
-              <LazyCategorySection key={cat.id} isAllMode={selectedCategory === 'all'}>
-                <section className="w-full flex flex-col pt-4">
+              <section key={cat.id} className="w-full flex flex-col pt-4">
+                
+                {/* Category Head Banner */}
+                <div className="flex items-center gap-6 mb-14 select-none">
+                  <h2 className="font-serif text-xl md:text-3xl font-bold uppercase tracking-[0.25em] text-antique-gold">
+                    {cat.label}
+                  </h2>
+                  <div className="flex-grow h-[1px] bg-gradient-to-r from-antique-gold/15 to-transparent"></div>
+                </div>
+
+                {/* Grid content columns (Featured image panel + Wish menu list panel) */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
                   
-                  {/* Category Head Banner */}
-                  <div className="flex items-center gap-6 mb-14 select-none">
-                    <h2 className="font-serif text-xl md:text-3xl font-bold uppercase tracking-[0.25em] text-antique-gold">
-                      {cat.label}
-                    </h2>
-                    <div className="flex-grow h-[1px] bg-gradient-to-r from-antique-gold/15 to-transparent"></div>
+                  {/* Visual Featured Image Column */}
+                  <div className="lg:col-span-5 w-full h-[220px] md:h-[320px] lg:h-[520px] overflow-hidden relative pointed-arch-box border border-antique-gold/20 shadow-[0_20px_45px_rgba(0,0,0,0.85)] group">
+                    <img
+                      alt={`Chef special selection visual for ${cat.label}`}
+                      className="w-full h-full object-cover origin-center scale-100 group-hover:scale-105 transition-transform duration-[2.5s] ease-out select-none"
+                      src={getCategoryImage(cat.id)}
+                      referrerPolicy="no-referrer"
+                    />
+                    {/* Subtle vignette blending with background */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0705] via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute bottom-10 left-10 z-10 flex flex-col select-none">
+                      <span className="font-subheader text-[10px] text-antique-gold uppercase tracking-[0.25em] font-extrabold">
+                        Bawarchi Signature
+                      </span>
+                      <h4 className="font-serif text-xl md:text-3xl text-warm-ivory font-bold mt-2">
+                        Chef's Traditional Platters
+                      </h4>
+                    </div>
                   </div>
 
-                  {/* Grid content columns (Featured image panel + Wish menu list panel) */}
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start w-full">
-                    
-                    {/* Visual Featured Image Column */}
-                    <div className="lg:col-span-5 w-full h-[220px] md:h-[320px] lg:h-[520px] overflow-hidden relative pointed-arch-box border border-antique-gold/20 shadow-[0_20px_45px_rgba(0,0,0,0.85)] group">
-                      <OptimizedImage
-                        alt={`Chef special selection visual for ${cat.label}`}
-                        className="w-full h-full object-cover origin-center scale-100 group-hover:scale-105 transition-transform duration-[2.5s] ease-out select-none"
-                        src={getCategoryImage(cat.id)}
-                        referrerPolicy="no-referrer"
-                      />
-                      {/* Subtle vignette blending with background */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B0705] via-transparent to-transparent"></div>
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="absolute bottom-10 left-10 z-10 flex flex-col select-none">
-                        <span className="font-subheader text-[10px] text-antique-gold uppercase tracking-[0.25em] font-extrabold">
-                          Bawarchi Signature
-                        </span>
-                        <h4 className="font-serif text-xl md:text-3xl text-warm-ivory font-bold mt-2">
-                          Chef's Traditional Platters
-                        </h4>
-                      </div>
-                    </div>
-
-                    {/* Items Description Panel (List cards layout grid) */}
-                    <div className="lg:col-span-7 flex flex-col gap-6 w-full">
-                      {sectionItems.map((item) => {
-                        return (
-                          <motion.div
-                            key={item.id}
-                            whileHover={{ x: 6, transition: { duration: 0.2 } }}
-                            className="group bg-[#0e0a07]/80 border border-white/[0.04] p-7 cursor-pointer hover:border-antique-gold/20 hover:bg-[#120D09] hover:shadow-[0_15px_35px_rgba(0,0,0,0.85)] rounded-2xl flex justify-between items-start gap-6 transition-all duration-300 select-none relative gold-reflection"
-                            onClick={() => onSetActiveItemForModal(item)}
-                            id={`dish-${item.id}`}
-                          >
-                            <div className="flex-1 flex flex-col text-left">
-                              {/* Title + Icons line */}
-                              <div className="flex items-center gap-3 mb-3 flex-wrap">
-                                {/* Veg / Non-Veg Border Square Dot Marker Indicator */}
-                                <div
-                                  className={`w-3.5 h-3.5 border flex items-center justify-center rounded-none select-none ${
-                                    item.isVeg ? 'border-green-600/60 bg-green-950/20' : 'border-red-650/60 bg-red-950/20'
-                                  }`}
-                                  title={item.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}
-                                >
-                                  <div className={`w-1.5 h-1.5 rounded-full ${item.isVeg ? 'bg-green-600' : 'bg-red-600'}`}></div>
-                                </div>
-
-                                <h3 className="font-serif text-lg text-stone-100 group-hover:text-antique-gold transition-colors duration-300 font-bold leading-snug">
-                                  {item.name}
-                                </h3>
-
-                                {item.isChefSpecial && (
-                                  <span className="inline-flex items-center gap-1 text-[9px] font-extrabold text-antique-gold font-subheader tracking-[0.2em] ml-1.5 animate-pulse bg-antique-gold/10 px-2 py-0.5 rounded-none">
-                                    <Sparkles size={9} className="w-2.5 h-2.5" /> REVERED
-                                  </span>
-                                )}
+                  {/* Items Description Panel (List cards layout grid) */}
+                  <div className="lg:col-span-7 flex flex-col gap-6 w-full">
+                    {sectionItems.map((item) => {
+                      return (
+                        <motion.div
+                          key={item.id}
+                          whileHover={{ x: 6, transition: { duration: 0.2 } }}
+                          className="group bg-[#0e0a07]/80 border border-white/[0.04] p-7 cursor-pointer hover:border-antique-gold/20 hover:bg-[#120D09] hover:shadow-[0_15px_35px_rgba(0,0,0,0.85)] rounded-2xl flex justify-between items-start gap-6 transition-all duration-300 select-none relative gold-reflection"
+                          onClick={() => onSetActiveItemForModal(item)}
+                          id={`dish-${item.id}`}
+                        >
+                          <div className="flex-1 flex flex-col text-left">
+                            {/* Title + Icons line */}
+                            <div className="flex items-center gap-3 mb-3 flex-wrap">
+                              {/* Veg / Non-Veg Border Square Dot Marker Indicator */}
+                              <div
+                                className={`w-3.5 h-3.5 border flex items-center justify-center rounded-none select-none ${
+                                  item.isVeg ? 'border-green-600/60 bg-green-950/20' : 'border-red-650/60 bg-red-950/20'
+                                }`}
+                                title={item.isVeg ? 'Vegetarian' : 'Non-Vegetarian'}
+                              >
+                                <div className={`w-1.5 h-1.5 rounded-full ${item.isVeg ? 'bg-green-600' : 'bg-red-600'}`}></div>
                               </div>
 
-                              <p className="font-sans text-[13px] text-stone-400 leading-relaxed mt-2.5 line-clamp-2 md:line-clamp-none">
-                                {item.description}
-                              </p>
+                              <h3 className="font-serif text-lg text-stone-100 group-hover:text-antique-gold transition-colors duration-300 font-bold leading-snug">
+                                {item.name}
+                              </h3>
 
-                              <span className="text-[9px] font-subheader text-[#8E8272] group-hover:text-antique-gold font-bold tracking-widest uppercase mt-5 block group-hover:translate-x-1 transition-all duration-300">
-                                EXPLORE THE CRAFT & ORIGINS · READ MORE
-                              </span>
+                              {item.isChefSpecial && (
+                                <span className="inline-flex items-center gap-1 text-[9px] font-extrabold text-antique-gold font-subheader tracking-[0.2em] ml-1.5 animate-pulse bg-antique-gold/10 px-2 py-0.5 rounded-none">
+                                  <Sparkles size={9} className="w-2.5 h-2.5" /> REVERED
+                                </span>
+                              )}
                             </div>
 
-                            {/* Portion Pricing Layout column */}
-                            <div className="flex flex-col items-end gap-5 select-none self-stretch justify-between">
-                              <span className="font-subheader text-base md:text-lg font-black text-stone-100 whitespace-nowrap leading-none mt-1">
-                                ₹{item.price}
-                                {item.priceFull && (
-                                  <span className="text-[#8E8272] font-normal md:text-[11px] text-[10px] ml-1 bg-[#16100B] px-1.5 py-0.5 ml-1.5">
-                                    Full F{item.priceFull}
-                                  </span>
-                                )}
-                              </span>
+                            <p className="font-sans text-[13px] text-stone-400 leading-relaxed mt-2.5 line-clamp-2 md:line-clamp-none">
+                              {item.description}
+                            </p>
 
-                              <button
-                                className="px-4 py-2 text-[9px] font-bold font-subheader tracking-[0.2em] uppercase cursor-pointer select-none border border-antique-gold/25 text-antique-gold bg-antique-gold/5 group-hover:bg-antique-gold group-hover:text-deep-charcoal group-hover:border-antique-gold transition-all duration-300 rounded-none shrink-0"
-                              >
-                                DETAILS
-                              </button>
-                            </div>
+                            <span className="text-[9px] font-subheader text-[#8E8272] group-hover:text-antique-gold font-bold tracking-widest uppercase mt-5 block group-hover:translate-x-1 transition-all duration-300">
+                              EXPLORE THE CRAFT & ORIGINS · READ MORE
+                            </span>
+                          </div>
 
-                          </motion.div>
-                        );
-                      })}
-                    </div>
+                          {/* Portion Pricing Layout column */}
+                          <div className="flex flex-col items-end gap-5 select-none self-stretch justify-between">
+                            <span className="font-subheader text-base md:text-lg font-black text-stone-100 whitespace-nowrap leading-none mt-1">
+                              ₹{item.price}
+                              {item.priceFull && (
+                                <span className="text-[#8E8272] font-normal md:text-[11px] text-[10px] ml-1 bg-[#16100B] px-1.5 py-0.5 ml-1.5">
+                                  Full F{item.priceFull}
+                                </span>
+                              )}
+                            </span>
 
+                            <button
+                              className="px-4 py-2 text-[9px] font-bold font-subheader tracking-[0.2em] uppercase cursor-pointer select-none border border-antique-gold/25 text-antique-gold bg-antique-gold/5 group-hover:bg-antique-gold group-hover:text-deep-charcoal group-hover:border-antique-gold transition-all duration-300 rounded-none shrink-0"
+                            >
+                              DETAILS
+                            </button>
+                          </div>
+
+                        </motion.div>
+                      );
+                    })}
                   </div>
-                </section>
-              </LazyCategorySection>
+
+                </div>
+              </section>
             );
           })
         )}
@@ -477,7 +432,7 @@ export const MenuView: React.FC<MenuViewProps> = ({
 
               {/* Left side: Golden Mask Nizami Arch image container */}
               <div className="w-full md:w-1/2 aspect-[3/4.5] md:h-auto overflow-hidden relative border border-antique-gold/20 rounded-xl bg-[#0a0a0a] mt-4 md:mt-0 select-none shadow-lg">
-                <OptimizedImage
+                <img
                   alt={activeItemForModal.name}
                   className="w-full h-full object-cover opacity-85 select-none"
                   src={getFoodItemImage(activeItemForModal.name, activeItemForModal.category)}

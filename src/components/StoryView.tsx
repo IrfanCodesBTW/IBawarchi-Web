@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { HOTLINKS } from '../data';
 import { Phone, Clock, Instagram, Facebook, Send, MapPin, CheckCircle } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface StoryViewProps {
   onNavigateToView: (view: 'home' | 'menu' | 'story') => void;
@@ -79,7 +80,7 @@ export const StoryView: React.FC<StoryViewProps> = ({ onNavigateToView }) => {
             <div className="absolute inset-0 bg-antique-gold/[0.04] rounded-none pointed-arch-box translate-x-3.5 translate-y-3.5 -z-10"></div>
             
             <div className="aspect-[3/4.5] w-full overflow-hidden pointed-arch-box bg-stone-950 relative">
-              <img
+              <OptimizedImage
                 className="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 select-none"
                 alt="Cinematic brass plate served with Mughlai cuisine and gold candle reflections"
                 src={HOTLINKS.ourStory}

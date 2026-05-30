@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface LogoProps {
   className?: string;
@@ -34,10 +35,11 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', variant
 
   return (
     <div className={`flex items-center justify-center select-none ${className}`}>
-      <img 
+      <OptimizedImage 
         src={imgSrc} 
         alt="Bawarchi Logo" 
         className={imgClass}
+        priority={true}
       />
     </div>
   );

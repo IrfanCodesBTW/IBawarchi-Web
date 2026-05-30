@@ -3,11 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
-import { HomeView } from './components/HomeView';
-import { MenuView } from './components/MenuView';
-import { StoryView } from './components/StoryView';
+
+// Route-based code splitting using dynamic imports
+const HomeView = lazy(() => import('./components/HomeView').then(m => ({ default: m.HomeView })));
+const MenuView = lazy(() => import('./components/MenuView').then(m => ({ default: m.MenuView })));
+const StoryView = lazy(() => import('./components/StoryView').then(m => ({ default: m.StoryView })));
+
+// Luxury Golden Shimmer Loader fallback
+const ShimmerLoader = () => (
+  <div className="w-full min-h-[60vh] flex flex-col items-center justify-center py-20 select-none">
+    <div className="relative flex items-center justify-center mb-6">
+      <div className="w-16 h-16 rounded-full border-2 border-antique-gold/10 border-t-antique-gold animate-spin" />
+      <div className="absolute w-8 h-8 rounded-full bg-antique-gold/5 animate-pulse" />
+    </div>
+    <span className="font-subheader text-[10px] tracking-[0.3em] text-stone-500 uppercase font-extrabold animate-pulse">
+      CRAFTING ROYAL FEAST...
+    </span>
+  </div>
+);
 import { Logo } from './components/Logo';
 import { MenuItem } from './types';
 import { Home, UtensilsCrossed, BookOpen } from 'lucide-react';
@@ -144,29 +159,31 @@ export default function App() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="w-full flex flex-col items-center"
           >
-            {currentView === 'home' && (
-              <HomeView
-                onNavigateToCategory={handleNavigateToCategory}
-                onNavigateToView={handleNavigateToView}
-                savedFeastIds={savedFeastIds}
-                onToggleFeastItem={handleToggleFeastItem}
-              />
-            )}
-            {currentView === 'menu' && (
-              <MenuView
-                selectedCategory={selectedCategory}
-                onSelectCategory={setSelectedCategory}
-                savedFeastIds={savedFeastIds}
-                onToggleFeastItem={handleToggleFeastItem}
-                activeItemForModal={activeItemForModal}
-                onSetActiveItemForModal={setActiveItemForModal}
-              />
-            )}
-            {currentView === 'story' && (
-              <StoryView
-                onNavigateToView={handleNavigateToView}
-              />
-            )}
+            <Suspense fallback={<ShimmerLoader />}>
+              {currentView === 'home' && (
+                <HomeView
+                  onNavigateToCategory={handleNavigateToCategory}
+                  onNavigateToView={handleNavigateToView}
+                  savedFeastIds={savedFeastIds}
+                  onToggleFeastItem={handleToggleFeastItem}
+                />
+              )}
+              {currentView === 'menu' && (
+                <MenuView
+                  selectedCategory={selectedCategory}
+                  onSelectCategory={setSelectedCategory}
+                  savedFeastIds={savedFeastIds}
+                  onToggleFeastItem={handleToggleFeastItem}
+                  activeItemForModal={activeItemForModal}
+                  onSetActiveItemForModal={setActiveItemForModal}
+                />
+              )}
+              {currentView === 'story' && (
+                <StoryView
+                  onNavigateToView={handleNavigateToView}
+                />
+              )}
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>

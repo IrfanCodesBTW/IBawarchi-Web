@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { HOTLINKS, CATEGORIES, CATEGORY_IMAGES } from '../data';
 import { ChefHat, Flame, Award, ChevronRight, Phone, MessageSquare, Star, ArrowRight, Check, Heart, Shield, Users, Clock, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface HomeViewProps {
   onNavigateToCategory: (category: string) => void;
@@ -159,11 +160,12 @@ export const HomeView: React.FC<HomeViewProps> = ({
           animate={{ scale: 1, opacity: 0.6 }}
           transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
+          <OptimizedImage
             alt="Authentic Indian Bawarchi premium Hyderabadi Dum Biryani cooked inside dynamic clay copper vessels"
             className="w-full h-full object-cover object-center filter saturate-[1.1]"
             src={HOTLINKS.heroBiryani}
             referrerPolicy="no-referrer"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/75 to-[#0B0705]/50"></div>
           <div className="absolute inset-0 bg-[#0B0705]/40 backdrop-blur-[1px]"></div>
@@ -255,7 +257,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               >
                 {/* Visual Dish Image Area */}
                 <div className="h-56 overflow-hidden relative select-none">
-                  <img
+                  <OptimizedImage
                     alt={item.name}
                     src={item.image}
                     className="w-full h-full object-cover object-center group-hover:scale-[1.04] transition-all duration-700 ease-out filter saturate-[1.05]"
@@ -318,7 +320,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 >
                   <div className="w-full">
                     <div className="w-full h-40 overflow-hidden rounded-xl mb-6 relative select-none">
-                      <img
+                      <OptimizedImage
                         alt={dish.name}
                         src={dish.image}
                         className="w-full h-full object-cover group-hover:scale-[1.04] transition-all duration-700 ease-out"
@@ -382,7 +384,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               onClick={() => onNavigateToCategory(cat.id)}
               className="relative rounded-2xl overflow-hidden h-36 group cursor-pointer border border-white/[0.04] hover:border-antique-gold/40 transition-all duration-500 shadow-2xl bg-black"
             >
-              <img
+              <OptimizedImage
                 alt={cat.label}
                 src={CATEGORY_IMAGES[cat.id] || HOTLINKS.heroBiryani}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-50 filters saturate-[1.1] brightness-[0.7] group-hover:brightness-[0.8]"
@@ -466,7 +468,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* 6. Family Dining Experience Story Section */}
       <section className="px-6 md:px-12 max-w-[1240px] mx-auto py-28 md:py-36 w-full text-left grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         <div className="lg:col-span-6 select-none relative h-[420px] rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_25px_50px_rgba(0,0,0,0.8)]">
-          <img
+          <OptimizedImage
             alt="Family dining experience interior at Indian Bawarchi"
             src={HOTLINKS.ourStory}
             className="w-full h-full object-cover filtering saturate-[1.1]"

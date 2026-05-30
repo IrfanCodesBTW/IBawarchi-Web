@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Hanken Grotesk", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-subheader: "Space Grotesk", sans-serif;
+
+  --color-deep-charcoal: #0B0705;
+  --color-antique-gold: #C79A52;
+  --color-warm-ivory: #FFF8EA;
+  --color-muted-charcoal: #16100B;
+
+  --color-bg-primary: #0B0705;
+  --color-bg-secondary: #16100B;
+  --color-bg-tertiary: #211811;
+  --color-brand-primary: #C79A52;
+  --color-brand-secondary: #D9AC63;
+  --color-brand-glow: rgba(199, 154, 82, 0.14);
+  --color-text-primary: #FFF8EA;
+  --color-text-secondary: #C9BCA8;
+  --color-text-muted: #8E8272;
+  --color-border-subtle: rgba(255, 230, 190, 0.14);
+  --color-border-strong: rgba(255, 230, 190, 0.28);
+
+  --color-stone-100: #FFF8EA;
+  --color-stone-300: #C9BCA8;
+  --color-stone-400: #8E8272;
+  --color-stone-500: #6B5E51;
+  --color-stone-600: #4B3E32;
+  --color-stone-700: #352B21;
+  --color-stone-800: #211811;
+  --color-stone-900: #16100B;
+  
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
+  --animate-float-slow: float-slow 12s ease-in-out infinite;
+  --animate-float-reverse: float-reverse 10s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 20s linear infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-3deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.1); }
+}
+
+/* Custom brand classes */
+.nizami-arch-mask {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 100%, 0% 100%, 0% 25%);
+}
+
+.pointed-arch-box {
+  border-top-left-radius: 50% 18%;
+  border-top-right-radius: 50% 18%;
+}
+
+/* Custom Cursor styling support for non-touch screens */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    width: 8px;
+    height: 8px;
+    background-color: #C79A52;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+  .custom-cursor-follower {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(199, 154, 82, 0.35);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s, 
+                background-color 0.3s;
+  }
+}
+
+/* Unified luxury glass card with high visual fidelity */
+.luxury-glass-card {
+  backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(10, 10, 10, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-glass-card:hover {
+  background: rgba(15, 15, 15, 0.55);
+  border-color: rgba(199, 154, 82, 0.25);
+  box-shadow: 0 20px 50px rgba(199, 154, 82, 0.05);
+}
+
+/* Subtle gold reflection line inside cards or headers */
+.gold-reflection {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-reflection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(199, 154, 82, 0.08), transparent);
+  transform: skewX(-25deg);
+  transition: 0.75s ease-in-out;
+}
+
+.gold-reflection:hover::before {
+  left: 125%;
+}
+
+/* Unified glow borders and subtle transitions with Sophisticated Dark stone/gold aura */
+.gold-border-glow {
+  border: 1px solid rgba(199, 154, 82, 0.12);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-border-glow:hover {
+  border-color: rgba(199, 154, 82, 0.4);
+  box-shadow: 0 0 30px rgba(199, 154, 82, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505; 
+}
+::-webkit-scrollbar-thumb {
+  background: #C79A52; 
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #efbe73; 
+}
+
+/* Steam Rising Animation for Hero Pot */
+@keyframes steamRise {
+  0% {
+    transform: translateY(0) scale(0.9) translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-60px) scale(1.3) translateX(-10px);
+  }
+  100% {
+    transform: translateY(-130px) scale(1.8) translateX(15px);
+    opacity: 0;
+  }
+}
+
+.steam-particle {
+  position: absolute;
+  bottom: 0px;
+  background: radial-gradient(circle, rgba(252, 249, 242, 0.22) 0%, rgba(252, 249, 242, 0) 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.steam-1 {
+  left: 25%;
+  width: 50px;
+  height: 50px;
+  animation: steamRise 5s infinite ease-out;
+  animation-delay: 0.2s;
+}
+
+.steam-2 {
+  left: 42%;
+  width: 60px;
+  height: 60px;
+  animation: steamRise 4.2s infinite ease-out;
+  animation-delay: 1.5s;
+}
+
+.steam-3 {
+  left: 58%;
+  width: 45px;
+  height: 45px;
+  animation: steamRise 5.5s infinite ease-out;
+  animation-delay: 3s;
+}
+
+/* Smooth active tap effect */
+.tap-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.tap-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(199, 154, 82, 0.3) 0%, rgba(199, 154, 82, 0) 70%);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.tap-glow:active::after {
+  transform: translate(-50%, -50%) scale(2);
+  opacity: 1;
+  transition: 0s;
+}
+

@@ -15,6 +15,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'Sweet golden sweetcorn kernels simmered with fresh diced garden vegetables in a thick, velvety starch broth. Dynamic steam aroma.',
     isVeg: true,
+    image: '/images/dishes/veg_corn_soup.png',
   },
   {
     id: 'vs2',
@@ -24,6 +25,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'A dark, spicy and tangy shredded vegetable broth spiked with dark soy, crushed white pepper, and vinegar.',
     isVeg: true,
+    image: '/images/dishes/veg_hot_and_sour_soup.png',
   },
   {
     id: 'vs3',
@@ -33,6 +35,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'Classic Cantonese-inspired vegetable broth cooked with crisp seasonal greens and a hint of sesame oil.',
     isVeg: true,
+    image: '/images/dishes/veg_canton_soup.png',
   },
   {
     id: 'vs4',
@@ -42,6 +45,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'Light, comforting mineral broth gently boiled with garden-fresh greens and premium ground coriander.',
     isVeg: true,
+    image: '/images/dishes/veg_clear_soup.png',
   },
   {
     id: 'vs5',
@@ -51,6 +55,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'Robust vegetable soup heavily infused with crispy burnt garlic bits, spring greens, and warming spices.',
     isVeg: true,
+    image: '/images/dishes/veg_garlic_soup.png',
   },
 
   // === NON VEG SOUPS ===
@@ -63,6 +68,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Tender shredded chicken breast cooked with sweetcorn kernels, egg drop ribbons, and warm chicken bone reduction.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/chicken_corn_soup.png',
   },
   {
     id: 'nvs2',
@@ -72,6 +78,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 140,
     description: 'Warm, spicy and sour chicken broth prepared masterfully with shredded chicken, bamboo shoots, and green chilies.',
     isVeg: false,
+    image: '/images/dishes/chicken_hot_soup.png',
   },
   {
     id: 'nvs3',
@@ -81,6 +88,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 140,
     description: 'Savoury Cantonese style chicken broth tossed with toasted sesame, spring onions, and garlic flakes.',
     isVeg: false,
+    image: '/images/dishes/chicken_canton_soup.png',
   },
   {
     id: 'nvs4',
@@ -90,6 +98,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 140,
     description: 'Gentle, clear comforting double-boiled chicken soup with fresh herbs and a dash of white pepper.',
     isVeg: false,
+    image: '/images/dishes/chicken_clear_soup.png',
   },
   {
     id: 'nvs5',
@@ -99,6 +108,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 140,
     description: 'Nourishing hot chicken soup loaded with roasted garlic, spring onions, and rich ginger notes.',
     isVeg: false,
+    image: '/images/dishes/chicken_garlic_soup.png',
   },
 
   // === SALADS ===
@@ -110,6 +120,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 120,
     description: 'Slices of crisp english cucumbers, juicy tomatoes, sweet red onions, and spicy green chilies with lemon wedge.',
     isVeg: true,
+    image: '/images/dishes/green_salad.png',
   },
 
   // === CHICKEN STARTERS ===
@@ -122,6 +133,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Deep-fried crimson chicken chunks tossed in spicy yogurt slurry, fresh curry leaves, and pounded dry chilies.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/chicken_65.png',
   },
   {
     id: 'cs2',
@@ -131,6 +143,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Crispy batter-fried chicken chunks tossed in hot wok with sweet bell peppers, red onions, and spicy green chili glaze.',
     isVeg: false,
+    image: '/images/dishes/chicken_chilly.png',
   },
   {
     id: 'cs3',
@@ -140,6 +153,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Golden chicken fritters smothered in a rich, tangy, sweet and spicy dark soy sauce with spring onions.',
     isVeg: false,
+    image: '/images/dishes/chicken_manchuria.png',
   },
   {
     id: 'cs4',
@@ -150,6 +164,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Succulent dry-fried chicken strips marinated in hand-ground spices and yogurt, sautéed with garlic and green chilies.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/chicken_majestic.png',
   },
   {
     id: 'cs5',
@@ -159,6 +174,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 360,
     description: 'Juicy dry chicken pieces tossed masterfully with freshly cracked back peppercorns, curry leaves, and ghee roasted garlic.',
     isVeg: false,
+    image: '/images/dishes/pepper_chicken.png',
   },
   {
     id: 'cs6',
@@ -168,6 +184,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 360,
     description: 'Spelt red-marinated chicken strips tossed in rich cashew-based tangy red sauce and finished with fresh coriander.',
     isVeg: false,
+    image: '/images/dishes/chicken_555_special.png',
   },
   {
     id: 'cs7',
@@ -177,6 +194,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 360,
     description: 'Succulent slow-cooked chicken roast sautéed in a semi-dry rich masala gravy with heavy Southern spices.',
     isVeg: false,
+    image: '/images/dishes/chicken_roast.png',
   },
   {
     id: 'cs8',
@@ -186,6 +204,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 360,
     description: 'Flipped chicken wings shaped like lollipops, crisp-fried in spices and served with hot szechuan chutney sauce.',
     isVeg: false,
+    image: '/images/dishes/chicken_lollipop.png',
   },
   {
     id: 'cs9',
@@ -195,6 +214,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 360,
     description: 'Plump chicken drumsticks marinated in premium spices, crispy breaded and golden-fried to tender perfection.',
     isVeg: false,
+    image: '/images/dishes/chicken_drum_stick.png',
   },
 
   // === CHICKEN BIRYANI ===
@@ -207,6 +227,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'The absolute masterpiece. Premium long-grain basmati rice and marinated farm chicken dum-cooked together with saffron strands and whole spices.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/chicken_biryani.png',
   },
   {
     id: 'cb2',
@@ -216,6 +237,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 380,
     description: 'Slow-cooked royal chicken biryani prepared and layered inside a thick-bottomed copper handi resulting in robust, caramelised base note flavors.',
     isVeg: false,
+    image: '/images/dishes/chicken_special_handi.png',
   },
   {
     id: 'cb3',
@@ -225,6 +247,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 580,
     description: 'Abundant festive serving of our legendary Nizami Chicken Dum Biryani, suitable to satisfy a family of 3-4 diners, with premium garnish.',
     isVeg: false,
+    image: '/images/dishes/chicken_family_pack.png',
   },
   {
     id: 'cb4',
@@ -234,6 +257,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 780,
     description: 'Our ultimate imperial feast pack of slow-dum chicken biryani. Tailored generously for larger family gatherings of 5-6 diners.',
     isVeg: false,
+    image: '/images/dishes/chicken_jumbo_pack.png',
   },
   {
     id: 'cb5',
@@ -244,6 +268,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Elegant local favorite. Aromatic basic biryani rice layered elegantly with high-heat fried pepper chicken pieces.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/chicken_fry_piece_biryani.png',
   },
   {
     id: 'cb6',
@@ -253,6 +278,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'Gourmet selection. Layered aromatic basmati rice served with richly marinated, boneless dry succulent spicy chicken cubes.',
     isVeg: false,
+    image: '/images/dishes/special_boneless_chicken_biryani.png',
   },
 
   // === VEG BIRYANI ===
@@ -264,6 +290,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Thick cubes of fresh malai paneer layered with basmati, sweet saffron water, pure ghee, and slow steam-cooked.',
     isVeg: true,
+    image: '/images/dishes/paneer_biryani.png',
   },
   {
     id: 'vb2',
@@ -273,6 +300,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 370,
     description: 'Gently stewed paneer and spiced rice cooked in miniature clay handi for an earthy, rustic texture and smoky profile.',
     isVeg: true,
+    image: '/images/dishes/paneer_handi.png',
   },
   {
     id: 'vb3',
@@ -282,6 +310,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 220,
     description: 'Medley of fresh green beans, peas, carrots, and potato cubes spice-cooked with premium aromatic biryani rice.',
     isVeg: true,
+    image: '/images/dishes/veg_biryani_plate.png',
   },
   {
     id: 'vb4',
@@ -291,6 +320,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 220,
     description: 'Fragrant biryani rice served with golden shallow-fried boiled eggs infused with pepper and curry leaves.',
     isVeg: false,
+    image: '/images/dishes/egg_biryani.png',
   },
   {
     id: 'vb5',
@@ -300,6 +330,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 150,
     description: 'Pure, authentic basmati rice harvested directly from the live dum pots, loaded with saffron, cardamom, and ghee.',
     isVeg: true,
+    image: '/images/dishes/biryani_rice.png',
   },
 
   // === NOODLES ===
@@ -311,6 +342,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Stir-fried noodles with farm chicken strips, julienned vegetables, white pepper, and dark soy in high heat wok.',
     isVeg: false,
+    image: '/images/dishes/chicken_noodles.png',
   },
   {
     id: 'nd2',
@@ -320,6 +352,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 150,
     description: 'Scrambled eggs tossed beautifully with hand-made noodles, cabbage, carrots, and sweet chili glaze.',
     isVeg: false,
+    image: '/images/dishes/egg_noodles.png',
   },
   {
     id: 'nd3',
@@ -329,6 +362,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 150,
     description: 'Refreshing stir-fried garden-fresh greens and premium noodles seasoned with garlic, soy, and white vinegar.',
     isVeg: true,
+    image: '/images/dishes/veg_noodles.png',
   },
   {
     id: 'nd4',
@@ -339,6 +373,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'The ultimate wok-tossed noodle platter carrying a loaded combination of chicken, eggs, and dynamic chopped vegetables.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/mix_noodles.png',
   },
 
   // === MUTTON BIRYANI ===
@@ -351,6 +386,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Authentic Kachhe Gosht ki Biryani. Succulent tender spring mutton pieces marinated in raw papaya, spices, and buried under premium basmati rice for a 4-hour slow dum steam.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/mutton_biryani.png',
   },
   {
     id: 'mb2',
@@ -360,6 +396,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 450,
     description: 'Earthy, rich clay handi cooked mutton biryani containing select baby lamb ribs, premium saffron, and deep fried shallots.',
     isVeg: false,
+    image: '/images/dishes/mutton_special_handi.png',
   },
   {
     id: 'mb3',
@@ -369,6 +406,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 680,
     description: 'Generous sharing platter of our legendary Nizami Mutton Dum Biryani, perfect to delight 3-4 hungry guests.',
     isVeg: false,
+    image: '/images/dishes/mutton_family_pack.png',
   },
   {
     id: 'mb4',
@@ -378,6 +416,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 880,
     description: 'The grand luxury banqueting pack of classic mutton biryani, prepared carefully for 5-6 diners with rich sides.',
     isVeg: false,
+    image: '/images/dishes/mutton_jumbo_pack.png',
   },
 
   // === CHICKEN KABABS ===
@@ -389,6 +428,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 520,
     description: 'Smoky whole charcoal-grilled bird marinated in Middle Eastern black pepper, yogurt, and zesty oil.',
     isVeg: false,
+    image: '/images/dishes/grill_chicken.png',
   },
   {
     id: 'ck2',
@@ -399,6 +439,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Plump spring chicken marinated in hot Kashmiri red pepper curd grease and roasted masterfully in blazing coal clay tandoor.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/tandoori_chicken.png',
   },
   {
     id: 'ck3',
@@ -408,6 +449,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 400,
     description: 'Rare heritage leg piece kebabs cooked slowly under direct charcoal warmth, juicy and spicy.',
     isVeg: false,
+    image: '/images/dishes/tandi_kabab.png',
   },
   {
     id: 'ck4',
@@ -417,6 +459,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 400,
     description: 'Classic skewered chicken fillets marinated in yellow mustard oil and spicy hung curd, scorched to perfection.',
     isVeg: false,
+    image: '/images/dishes/chicken_tikka.png',
   },
   {
     id: 'ck5',
@@ -426,6 +469,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 400,
     description: 'Royal boneless chicken chunks layered with hand-whipped cream, white cheese, cardamom, and mildly charred.',
     isVeg: false,
+    image: '/images/dishes/malai_kabab.png',
   },
   {
     id: 'ck6',
@@ -435,6 +479,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 400,
     description: 'Spicy farm chicken roasted dynamically in aromatic marinade of fresh mint, dhania paste, green chili, and lemon.',
     isVeg: false,
+    image: '/images/dishes/haryali_kabab.png',
   },
   {
     id: 'ck7',
@@ -444,6 +489,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 400,
     description: 'Unique ginger-heavy double-cooked chicken drumsticks skewered with spiced onion rings and red peppers.',
     isVeg: false,
+    image: '/images/dishes/adraki_panchy.png',
   },
   {
     id: 'ck8',
@@ -453,6 +499,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 520,
     description: 'Our ultimate fully-loaded tandoor hot grilled bird, marinated in extra spicy ghost-pepper styled red masala paste.',
     isVeg: false,
+    image: '/images/dishes/hot_kabab_full_bird.png',
   },
 
   // === VEG STARTERS ===
@@ -464,6 +511,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Gently crisped mix-vegetable dumpling balls cooked in high-heat wok with fresh scallions, soy, and garlic sauce.',
     isVeg: true,
+    image: '/images/dishes/veg_manchuria.png',
   },
   {
     id: 'vgs2',
@@ -473,6 +521,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Deep-fried golden vegetable fritters sautéed in spiced curd with fresh curry leaves and crushed green chilies.',
     isVeg: true,
+    image: '/images/dishes/veg_65.png',
   },
   {
     id: 'vgs3',
@@ -482,6 +531,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 220,
     description: 'Sizzling crackling batter-coated baby corn, mushrooms, and beans dry-roasted with salt, pepper, and spring garlic.',
     isVeg: true,
+    image: '/images/dishes/crispy_veg.png',
   },
   {
     id: 'vgs4',
@@ -491,6 +541,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Tender baby potato balls crisp-fried and tossed in our classic fiery 65-yogurt chili spice seasoning.',
     isVeg: true,
+    image: '/images/dishes/aloo_65.png',
   },
   {
     id: 'vgs5',
@@ -500,6 +551,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Crunchy farm cauliflower florets dressed in garlic, ginger, spring onion, and hot sweet soya glaze.',
     isVeg: true,
+    image: '/images/dishes/gobi_manchuria.png',
   },
   {
     id: 'vgs6',
@@ -509,6 +561,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Fresh paneer fingers tossed dynamically with green bell peppers, dark soya, black vinegar, and green chilies.',
     isVeg: true,
+    image: '/images/dishes/paneer_chilly.png',
   },
   {
     id: 'vgs7',
@@ -519,6 +572,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Thin sheets of cottage cheese dry-fried with yellow mustard paste, sweet garlic ribbons, mint, and roasted green peas.',
     isVeg: true,
     isChefSpecial: true,
+    image: '/images/dishes/paneer_majestic.png',
   },
   {
     id: 'vgs8',
@@ -528,6 +582,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Velvety cottage cheese cubes coated in ground spices, crisped and tossed in red chili curd masala.',
     isVeg: true,
+    image: '/images/dishes/paneer_65.png',
   },
   {
     id: 'vgs9',
@@ -537,6 +592,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Soft paneer strips tossed in rich cashew-based slightly sweetened creamy red gravy with dynamic chives.',
     isVeg: true,
+    image: '/images/dishes/paneer_555.png',
   },
 
   // === INDIAN CHICKEN CURRIES ===
@@ -549,6 +605,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Our signature premium Shahi recipe. Broiler chicken slow-stewed in almond paste, pure saffron, ghee and cream.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/ib_special_curry.png',
   },
   {
     id: 'icc2',
@@ -558,6 +615,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 370,
     description: 'Whole chicken stuffed with spiced mince, hardboiled egg, and slow-smothered in rich, nutty brown onion dynamic reduction.',
     isVeg: false,
+    image: '/images/dishes/special_murg_musallam.png',
   },
   {
     id: 'icc3',
@@ -567,6 +625,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'Traditional slow clay-cooked chicken curry marinated in raw ground spices, cashews, and sealed to retain aroma.',
     isVeg: false,
+    image: '/images/dishes/dum_ka_chicken.png',
   },
   {
     id: 'icc4',
@@ -576,6 +635,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Mughal-style velvet korma cooked with white poppy seeds, fresh almonds, sweet cardamom, and rose water.',
     isVeg: false,
+    image: '/images/dishes/chicken_shahi_khorma.png',
   },
   {
     id: 'icc5',
@@ -585,6 +645,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Mildly spiced, sweetish pink gravy cooked with premium Kashmiri red dried chilies, melon purée and fresh apples.',
     isVeg: false,
+    image: '/images/dishes/kashmir_chicken.png',
   },
   {
     id: 'icc6',
@@ -594,6 +655,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Classic comforting home-style farm chicken curry slow simmered with ginger, garlic, tomatoes and dried coriander.',
     isVeg: false,
+    image: '/images/dishes/chicken_curry.png',
   },
   {
     id: 'icc7',
@@ -603,6 +665,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'A spicy thick gravy containing pan-fried chicken tossed with garam masala, bay leaf, and fresh robust black pepper.',
     isVeg: false,
+    image: '/images/dishes/chicken_masala.png',
   },
   {
     id: 'icc8',
@@ -612,6 +675,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Imperial rich yellow gravy enriched with whisked egg fluff, cashew paste, dry spices and sweet cardamoms.',
     isVeg: false,
+    image: '/images/dishes/chicken_moghlai.png',
   },
   {
     id: 'icc9',
@@ -621,6 +685,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Mild, extremely creamy white curry carrying strong tones of cheese, cashew butter, green cardamom, and dry pepper.',
     isVeg: false,
+    image: '/images/dishes/chicken_afghani.png',
   },
   {
     id: 'icc10',
@@ -630,6 +695,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'A tangier, rich medium curry spiced up with home-ground pickle powder and yellow mustard seed crust.',
     isVeg: false,
+    image: '/images/dishes/chicken_chatpata.png',
   },
   {
     id: 'icc11',
@@ -639,6 +705,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Juicy tandoori chicken shreds stewed in a buttery, silky satin smooth tomato-cream gravy with sweet kasuri methi leaf.',
     isVeg: false,
+    image: '/images/dishes/butter_chicken.png',
   },
   {
     id: 'icc12',
@@ -648,6 +715,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Blazing-hot, deep-red traditional Maratha rustic chicken gravy flavored with dry grated coconut and poppy seed.',
     isVeg: false,
+    image: '/images/dishes/chicken_kolhapuri.png',
   },
   {
     id: 'icc13',
@@ -657,6 +725,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Semi-dry dark chicken starter-curry cooked with a generous heap of ginger juliennes and capsicum slices.',
     isVeg: false,
+    image: '/images/dishes/ginger_chicken.png',
   },
   {
     id: 'icc14',
@@ -666,6 +735,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Fiery Andhra classic. Chicken simmered in heavy green chili paste, poppy seed purée and curry leaves.',
     isVeg: false,
+    image: '/images/dishes/andhra_chicken.png',
   },
   {
     id: 'icc15',
@@ -675,6 +745,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Earthy black pepper-forward dry robust chicken curry utilizing regional curry powder and roasted coconut powder.',
     isVeg: false,
+    image: '/images/dishes/telangana_chicken.png',
   },
   {
     id: 'icc16',
@@ -684,6 +755,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Spiced chicken cooked inside active iron kadai with chunks of sweet bell peppers, tomato pieces, and fresh kadai powder.',
     isVeg: false,
+    image: '/images/dishes/kadai_chicken.png',
   },
   {
     id: 'icc17',
@@ -693,6 +765,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'Smoked boneless chicken tikka cooked inside a medium spiced red onion-tomato masala base gravy with dry cilantro.',
     isVeg: false,
+    image: '/images/dishes/chicken_tikka_masala.png',
   },
   {
     id: 'icc18',
@@ -702,6 +775,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'Heavy North-Indian style rustic chicken stew containing roasted coriander, dark tomato reduction, and fresh ghee.',
     isVeg: false,
+    image: '/images/dishes/punjabi_chicken.png',
   },
 
   // === VEG CURRIES ===
@@ -714,6 +788,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'A hand-selected choice of peak organic vegetables cooked with cashew cream, cottage cheese, and sweet spices.',
     isVeg: true,
     isChefSpecial: true,
+    image: '/images/dishes/special_veg_curry.png',
   },
   {
     id: 'vc2',
@@ -723,6 +798,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 170,
     description: 'Yellow arhar lentils boiled to soft cream and fried inside iron kadai with ghee, cumin, tomato, and chili flakes.',
     isVeg: true,
+    image: '/images/dishes/dal_fry.png',
   },
   {
     id: 'vc3',
@@ -732,6 +808,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 180,
     description: 'Silky smooth yellow lentils tempered dynamically with sizzling hot ghee, dry red kashmiri pepper, and royal cumin.',
     isVeg: true,
+    image: '/images/dishes/dal_tadka.png',
   },
   {
     id: 'vc4',
@@ -741,6 +818,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Garden mushrooms, sweet peas and cottage cheese squares folded elegantly inside velvety sweet almond-cream gravy.',
     isVeg: true,
+    image: '/images/dishes/veg_shabnam.png',
   },
   {
     id: 'vc5',
@@ -750,6 +828,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Crisp assorted vegetables stirred dynamically with bell peppers, onions, and freshly dry-roasted kadai masala.',
     isVeg: true,
+    image: '/images/dishes/kadai_veg.png',
   },
   {
     id: 'vc6',
@@ -759,6 +838,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'A comforting rich house-mix of carrots, beans, baby potatoes, green peas and cauliflower buds tossed in spices.',
     isVeg: true,
+    image: '/images/dishes/mix_veg_curry.png',
   },
   {
     id: 'vc7',
@@ -768,6 +848,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Fiery-hot combination of baby potato slices and cauliflower florets in spicy coconut Kohapuri style dry gravy.',
     isVeg: true,
+    image: '/images/dishes/aloo_gobi_kolhapuri.png',
   },
   {
     id: 'vc8',
@@ -777,6 +858,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Royal Rajasthani style spicy vegetable panache topped with crispy, layered papad crowns and coriander cream.',
     isVeg: true,
+    image: '/images/dishes/veg_jaipuri.png',
   },
   {
     id: 'vc9',
@@ -786,6 +868,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Tangy combination of baby vegetables cooked in onion-tomato purée enriched with sour pickle powder.',
     isVeg: true,
+    image: '/images/dishes/veg_chatpata.png',
   },
   {
     id: 'vc10',
@@ -795,6 +878,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Crisped small potato cubes folded into smooth slow-simmered garlic spiced spinach leaf purée.',
     isVeg: true,
+    image: '/images/dishes/aloo_palak.png',
   },
   {
     id: 'vc11',
@@ -804,6 +888,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 300,
     description: 'Purified blanched spinach leaves, creamed to perfection with garlic bits, green chili, and roasted dry cumin.',
     isVeg: true,
+    image: '/images/dishes/plain_palak.png',
   },
   {
     id: 'vc12',
@@ -814,6 +899,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Fresh paneer cubes simmered in our famous satin-smooth orange gravy with butter, cashews, and sweet fenugreek notes.',
     isVeg: true,
     isChefSpecial: true,
+    image: '/images/dishes/paneer_butter_masala.png',
   },
   {
     id: 'vc13',
@@ -823,6 +909,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Cottage cheese squares gently poached inside royal cream of cashew paste, cardamom base and milk pudding.',
     isVeg: true,
+    image: '/images/dishes/paneer_shahi_khorma.png',
   },
   {
     id: 'vc14',
@@ -832,6 +919,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 330,
     description: 'Ghee-roasted premium split cashew nuts and soft paneer chunks tossed together in sweet gravy.',
     isVeg: true,
+    image: '/images/dishes/kaju_paneer.png',
   },
   {
     id: 'vc15',
@@ -841,6 +929,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 330,
     description: 'Paneer fingers cooked with chunky tomatoes, sweet capsicums, red onion squares, and spicy kadai spices.',
     isVeg: true,
+    image: '/images/dishes/kadai_paneer.png',
   },
   {
     id: 'vc16',
@@ -850,6 +939,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'The absolute royal luxury dish: golden ghee-fired cashew nuts in thick curry.',
     isVeg: true,
+    image: '/images/dishes/kaju_masala.png',
   },
   {
     id: 'vc17',
@@ -859,6 +949,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 350,
     description: 'Soft potato and cheese kofta dumplings cooked inside cream and nut based sweet saffron sauce.',
     isVeg: true,
+    image: '/images/dishes/malai_kofta.png',
   },
   {
     id: 'vc18',
@@ -868,6 +959,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Juicy cottage cheese squares sautéed gently inside spinach purée tempered with robust charred garlic.',
     isVeg: true,
+    image: '/images/dishes/palak_paneer.png',
   },
   {
     id: 'vc19',
@@ -877,6 +969,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 320,
     description: 'Soft paneer tossed in two varieties of caramelized red onions, sweet tomatoes, cumin and garam masala.',
     isVeg: true,
+    image: '/images/dishes/paneer_do_pyaza.png',
   },
 
   // === FRIED RICE ===
@@ -888,6 +981,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Long-grain basmati rice tossed inside dry high wok with egg ribbons, shredded chicken and light soy.',
     isVeg: false,
+    image: '/images/dishes/chicken_fried_rice.png',
   },
   {
     id: 'fr2',
@@ -897,6 +991,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Scrambled golden eggs tossed masterfully with premium basmati rice, cabbage, carrots, and spring chives.',
     isVeg: false,
+    image: '/images/dishes/egg_fried_rice.png',
   },
   {
     id: 'fr3',
@@ -906,6 +1001,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Fragrant basmati rice tossed dynamically with crisp carrot bits, green peas, beans, garlic and white pepper leaves.',
     isVeg: true,
+    image: '/images/dishes/veg_fried_rice.png',
   },
   {
     id: 'fr4',
@@ -916,6 +1012,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Wok-fired rice packed with chicken pieces, scrambled eggs, fresh seasonal vegetables and authentic oriental glazes.',
     isVeg: false,
     isChefSpecial: true,
+    image: '/images/dishes/mix_fried_rice.png',
   },
   {
     id: 'fr5',
@@ -925,6 +1022,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Cooling, creamed yogurt rice mixed with pure ghee, tempered mustard seeds, copy green curry leaves, and raisins.',
     isVeg: true,
+    image: '/images/dishes/curd_rice.png',
   },
   {
     id: 'fr6',
@@ -934,6 +1032,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 160,
     description: 'Buttery pan-fried basmati rice seasoned generously with aromatic crackled cumin seeds and cilantro stalks.',
     isVeg: true,
+    image: '/images/dishes/jeera_rice.png',
   },
 
   // === INDIAN ROTIS ===
@@ -945,6 +1044,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 25,
     description: 'Classic healthy wholewheat flatbread pasted on active clay tandoor walls and baked to charred crisp finish.',
     isVeg: true,
+    image: '/images/dishes/tandoori_roti.png',
   },
   {
     id: 'ir2',
@@ -954,6 +1054,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 25,
     description: 'An ultra-thin, handkerchief-like wheat flatbread tossed elegantly in the air and cooked on hot inverted wok.',
     isVeg: true,
+    image: '/images/dishes/rumali_roti.png',
   },
   {
     id: 'ir3',
@@ -963,6 +1064,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 45,
     description: 'Yeast leavened refined flour flatbread, roasted inside clay oven and layered with melted butter.',
     isVeg: true,
+    image: '/images/dishes/butter_naan.png',
   },
   {
     id: 'ir4',
@@ -972,6 +1074,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 35,
     description: 'Puffy, classic leavened hand-stretched soft flatbread, charcoal-scorched in the tandoor.',
     isVeg: true,
+    image: '/images/dishes/plain_naan.png',
   },
   {
     id: 'ir5',
@@ -982,6 +1085,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Tandoor naans heavy with chopped fried garlic pearls, toasted coriander seeds, brushed generously with butter.',
     isVeg: true,
     isChefSpecial: true,
+    image: '/images/dishes/garlic_naan.png',
   },
 ];
 
@@ -1004,142 +1108,147 @@ export const CATEGORIES = [
 ];
 
 export const CATEGORY_IMAGES: Record<string, string> = {
-  'veg-soups': 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80',
-  'non-veg-soups': 'https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?auto=format&fit=crop&w=800&q=80',
-  'salads': 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80',
-  'chicken-starters': 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80',
-  'chicken-biryani': 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
-  'veg-biryani': 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80',
-  'noodles': 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80',
-  'mutton-biryani': 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
-  'chicken-kababs': 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
-  'veg-starters': 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80',
-  'indian-chicken-curries': 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
-  'veg-curries': 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80',
-  'fried-rice': 'https://images.unsplash.com/photo-1603133872878-a5647f30a218?auto=format&fit=crop&w=800&q=80',
-  'indian-rotis': 'https://images.unsplash.com/photo-1658145244109-f1a6fba94bfe?auto=format&fit=crop&w=800&q=80',
+  'veg-soups': '/images/dishes/veg_soup.png',
+  'non-veg-soups': '/images/dishes/chicken_soup.png',
+  'salads': '/images/dishes/green_salad.png',
+  'chicken-starters': '/images/dishes/chicken_starter.png',
+  'chicken-biryani': '/images/dishes/chicken_biryani.png',
+  'veg-biryani': '/images/dishes/veg_biryani.png',
+  'noodles': '/images/dishes/chicken_noodles.png',
+  'mutton-biryani': '/images/dishes/mutton_biryani.png',
+  'chicken-kababs': '/images/dishes/chicken_kabab.png',
+  'veg-starters': '/images/dishes/veg_starter.png',
+  'indian-chicken-curries': '/images/dishes/butter_chicken.png',
+  'veg-curries': '/images/dishes/veg_curry.png',
+  'fried-rice': '/images/dishes/fried_rice.png',
+  'indian-rotis': '/images/dishes/butter_naan.png',
 };
 
 export const HOTLINKS = {
   // Cinematic view of biryani pot
-  heroBiryani: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1200&q=80',
+  heroBiryani: '/images/ui/hero_biryani.png',
   // Tandoori chicken selection spread
-  tandooriSnacks: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80',
+  tandooriSnacks: '/images/dishes/tandoori_snacks.png',
   // Butter chicken with garlic naan
-  butterChicken: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80',
+  butterChicken: '/images/dishes/butter_chicken.png',
   // Premium dark table with brass utensils and dishes
-  ourStory: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80'
+  ourStory: '/images/ui/our_story.png'
 };
 
 export const getFoodItemImage = (name: string, category: string): string => {
+  const item = MENU_ITEMS.find(i => i.name === name);
+  if (item && item.image) {
+    return item.image;
+  }
+  
   const normalizedName = name.toLowerCase();
 
   // Family Packs and Jumbo Packs (Festive indian spread)
   if (normalizedName.includes('family') || normalizedName.includes('jumbo') || normalizedName.includes('pack')) {
     if (normalizedName.includes('mutton')) {
-      return 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=800&q=80';
+      return '/images/dishes/mutton_biryani.png';
     }
-    return 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_biryani.png';
   }
 
   // Mutton Biryani items
   if (normalizedName.includes('mutton') && (normalizedName.includes('biryani') || normalizedName.includes('handi'))) {
-    return 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/mutton_biryani.png';
   }
 
   // Chicken Biryani items
   if (normalizedName.includes('chicken') && normalizedName.includes('fry piece biryani')) {
-    return 'https://images.unsplash.com/photo-1625220194771-7ebedd0b70b9?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_biryani.png';
   }
   if (normalizedName.includes('boneless chicken biryani') || normalizedName.includes('special boneless')) {
-    return 'https://images.unsplash.com/photo-1631515223363-5d92d564d1b8?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_biryani.png';
   }
   if (normalizedName.includes('chicken') && (normalizedName.includes('biryani') || normalizedName.includes('handi'))) {
-    return 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_biryani.png';
   }
 
   // Veg Biryanis (paneer/kaju/etc)
   if (normalizedName.includes('veg') && normalizedName.includes('biryani')) {
-    return 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_biryani.png';
   }
   if (normalizedName.includes('paneer') && normalizedName.includes('biryani')) {
-    return 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_biryani.png';
   }
   if (normalizedName.includes('kaju') && normalizedName.includes('biryani')) {
-    return 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_biryani.png';
   }
 
   // Butter chicken / curries
   if (normalizedName.includes('butter chicken') || normalizedName.includes('murg')) {
-    return 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/butter_chicken.png';
   }
   if (normalizedName.includes('paneer butter') || normalizedName.includes('paneer tikka masala') || normalizedName.includes('kadai paneer') || normalizedName.includes('shahi paneer')) {
-    return 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_curry.png';
   }
   if (normalizedName.includes('palak paneer')) {
-    return 'https://images.unsplash.com/photo-1613292443284-8d10ef9383fe?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_curry.png';
   }
 
   // Chinese Starters / Manchuria / Chilly / Fry
   if (normalizedName.includes('chilly') || normalizedName.includes('manchuria') || normalizedName.includes('65') || normalizedName.includes('majestic') || normalizedName.includes('roast') || normalizedName.includes('lollipop') || normalizedName.includes('drum stick') || normalizedName.includes('starters')) {
     if (normalizedName.includes('paneer') || normalizedName.includes('gobi') || normalizedName.includes('veg') || normalizedName.includes('baby corn')) {
-      return 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80';
+      return '/images/dishes/veg_starter.png';
     }
-    return 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_starter.png';
   }
 
   // Tandoor & Kababs
   if (normalizedName.includes('kabab') || normalizedName.includes('tikka') || normalizedName.includes('tandoori chicken') || normalizedName.includes('tangdi')) {
-    return 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_kabab.png';
   }
 
   // Rotis & Naan
   if (normalizedName.includes('naan') || normalizedName.includes('roti') || normalizedName.includes('paratha')) {
-    return 'https://images.unsplash.com/photo-1658145244109-f1a6fba94bfe?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/butter_naan.png';
   }
 
   // Noodles
   if (normalizedName.includes('noodles')) {
-    return 'https://images.unsplash.com/photo-1582515073490-39981397c445?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_noodles.png';
   }
 
   // Fried Rice
   if (normalizedName.includes('fried rice') || normalizedName.includes('rice')) {
-    return 'https://images.unsplash.com/photo-1603133872878-a5647f30a218?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/fried_rice.png';
   }
 
   // Salad
   if (normalizedName.includes('salad')) {
-    return 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/green_salad.png';
   }
 
   // Soups
   if (normalizedName.includes('soup')) {
     if (normalizedName.includes('chicken') || normalizedName.includes('meat')) {
-      return 'https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?auto=format&fit=crop&w=800&q=80';
+      return '/images/dishes/chicken_soup.png';
     }
-    return 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_soup.png';
   }
 
   // Fallbacks based on category keys
   if (category === 'chicken-biryani') {
-    return 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_biryani.png';
   }
   if (category === 'mutton-biryani') {
-    return 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/mutton_biryani.png';
   }
   if (category === 'veg-biryani') {
-    return 'https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_biryani.png';
   }
   if (category === 'chicken-kababs') {
-    return 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/chicken_kabab.png';
   }
   if (category === 'indian-chicken-curries') {
-    return 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/butter_chicken.png';
   }
   if (category === 'veg-curries') {
-    return 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80';
+    return '/images/dishes/veg_curry.png';
   }
 
-  return CATEGORY_IMAGES[category] || 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80';
+  return CATEGORY_IMAGES[category] || '/images/dishes/chicken_biryani.png';
 };

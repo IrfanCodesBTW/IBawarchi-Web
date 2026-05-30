@@ -38,7 +38,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Chicken Biryani',
       price: 250,
       description: 'The supreme classic. Tender marinated farm chicken slow dum-cooked with premium aged basmati rice, pure saffron threads, and hand-ground Mughlai spices.',
-      image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/chicken_biryani.png',
       isVeg: false,
       category: 'chicken-biryani',
     },
@@ -47,7 +47,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Chicken Fry Piece Biryani',
       price: 300,
       description: 'An aromatic layering of classic basmati biryani rice crowned with golden, fiery spices-fried tender chicken chunks and crisp curry leaves.',
-      image: 'https://images.unsplash.com/photo-1625220194771-7ebedd0b70b9?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/chicken_fry_piece_biryani.png',
       isVeg: false,
       category: 'chicken-biryani',
     },
@@ -56,7 +56,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Special Boneless Chicken Biryani',
       price: 350,
       description: 'Gourmet layering of delicate saffron-infused basmati rice paired with richly spiced, tender, boneless pan-charred chicken breast medallions.',
-      image: 'https://images.unsplash.com/photo-1631515223363-5d92d564d1b8?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/special_boneless_chicken_biryani.png',
       isVeg: false,
       category: 'chicken-biryani',
     },
@@ -65,7 +65,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Mutton Biryani',
       price: 350,
       description: 'Traditional Kachhe Gosht ki Biryani. Select slow-cooked spring lamb pieces marinated inside raw papaya paste and steam-baked under giant iron weight.',
-      image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/mutton_biryani.png',
       isVeg: false,
       category: 'mutton-biryani',
     },
@@ -74,7 +74,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Chicken Family Pack',
       price: 580,
       description: 'A grand imperial serving of our famous Nizami Chicken Dum Biryani, hand-packed inside authentic vessels to serve 3-4 hungry family members.',
-      image: 'https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/chicken_family_pack.png',
       isVeg: false,
       category: 'chicken-biryani',
     },
@@ -83,7 +83,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Mutton Family Pack',
       price: 680,
       description: 'Rich, celebratory feast pack of our royal wood-fired Mutton Dum Biryani, generously portioned for a traditional family gathering of 3-4 diners.',
-      image: 'https://images.unsplash.com/photo-1601050690597-df056fb4ce78?auto=format&fit=crop&w=800&q=80',
+      image: '/images/dishes/mutton_family_pack.png',
       isVeg: false,
       category: 'mutton-biryani',
     },
@@ -96,7 +96,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Paneer Butter Masala',
       price: 320,
       description: 'Rich cream and cashews tomato gravy cooked with thick malai paneer blocks.',
-      image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80',
+      image: '/images/dishes/paneer_butter_masala.png',
       isVeg: true,
     },
     {
@@ -104,7 +104,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Butter Chicken',
       price: 320,
       description: 'Our traditional smoky tandoori chicken shreds folded in velvet butter cream.',
-      image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80',
+      image: '/images/dishes/butter_chicken.png',
       isVeg: false,
     },
     {
@@ -112,7 +112,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Chicken 65',
       price: 320,
       description: 'Crimson-red deep-fried chicken cubes dry-tossed in yogurt chili slurry and curry twigs.',
-      image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80',
+      image: '/images/dishes/chicken_65.png',
       isVeg: false,
     },
     {
@@ -120,7 +120,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       name: 'Tandoori Chicken',
       price: 480,
       description: 'Full spring chicken dry skewered with yogurt and Kashmiri red pepper in clay kiln.',
-      image: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80',
+      image: '/images/dishes/tandoori_chicken.png',
       isVeg: false,
     },
   ];
@@ -162,7 +162,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <img
             alt="Authentic Indian Bawarchi premium Hyderabadi Dum Biryani cooked inside dynamic clay copper vessels"
             className="w-full h-full object-cover object-center filter saturate-[1.1]"
-            src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1600&q=80"
+            src={HOTLINKS.heroBiryani}
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-deep-charcoal via-deep-charcoal/75 to-[#0B0705]/50"></div>
@@ -468,7 +468,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="lg:col-span-6 select-none relative h-[420px] rounded-2xl overflow-hidden border border-white/[0.08] shadow-[0_25px_50px_rgba(0,0,0,0.8)]">
           <img
             alt="Family dining experience interior at Indian Bawarchi"
-            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"
+            src={HOTLINKS.ourStory}
             className="w-full h-full object-cover filtering saturate-[1.1]"
             referrerPolicy="no-referrer"
           />

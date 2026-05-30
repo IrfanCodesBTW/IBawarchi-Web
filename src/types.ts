@@ -13,6 +13,7 @@ export interface MenuItem {
   description: string;
   isVeg: boolean;
   isChefSpecial?: boolean;
+  image?: string;
 }
 
 export interface Reservation {

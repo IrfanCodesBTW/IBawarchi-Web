@@ -185,9 +185,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
             ROYAL HYDERABADI CULINARY ART
           </span>
           
-          <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-bold text-warm-ivory leading-[1.02] tracking-tight max-w-4xl mb-6">
+          <h1 className="font-serif text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-normal text-warm-ivory leading-[1.02] tracking-tight max-w-4xl mb-6">
             The Indian <br />
-            <span className="font-serif italic font-light tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-antique-gold via-brand-secondary to-[#ffeecc] animate-gradient-shift bg-[size:200%_200%]">Bawarchi</span>
+            <span className="font-display -mt-4 md:-mt-5 ml-8 md:ml-16 text-6xl sm:text-8xl md:text-9xl lg:text-[120px] text-transparent bg-clip-text bg-gradient-to-r from-antique-gold via-brand-secondary to-[#ffeecc] animate-gradient-shift bg-[size:200%_200%]">Bawarchi</span>
           </h1>
           
           <p className="font-sans text-base md:text-xl text-[#D9CDB8] leading-relaxed font-light max-w-2xl mb-12">

@@ -10,6 +10,7 @@ import { MenuView } from './components/MenuView';
 import { StoryView } from './components/StoryView';
 import { Logo } from './components/Logo';
 import { MenuItem } from './types';
+import { MENU_ITEMS } from './data';
 import { Home, UtensilsCrossed, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -18,40 +19,6 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [savedFeastIds, setSavedFeastIds] = useState<string[]>([]);
   const [activeItemForModal, setActiveItemForModal] = useState<MenuItem | null>(null);
-
-  // Custom Cursor tracking coordinates and states
-  const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
-  const [cursorHovered, setCursorHovered] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-
-  useEffect(() => {
-    const detectTouch = () => {
-      setIsTouchDevice(true);
-      window.removeEventListener('touchstart', detectTouch);
-    };
-    window.addEventListener('touchstart', detectTouch);
-
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      const target = e.target as HTMLElement | null;
-      if (target) {
-        const isClickable =
-          target.tagName === 'BUTTON' ||
-          target.tagName === 'A' ||
-          target.closest('button') ||
-          target.closest('a') ||
-          target.classList.contains('clickable') ||
-          window.getComputedStyle(target).cursor === 'pointer';
-        setCursorHovered(!!isClickable);
-      }
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('touchstart', detectTouch);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
 
   // Sync Feast entries with LocalStorage on init
   useEffect(() => {
@@ -63,6 +30,48 @@ export default function App() {
         console.error('Failed reading feast localstorage', err);
       }
     }
+  }, []);
+
+  // Synchronize state with URL hash
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash || '#home';
+      if (hash.startsWith('#home') || hash === '#') {
+        setCurrentView('home');
+        setSelectedCategory('all');
+        setActiveItemForModal(null);
+      } else if (hash.startsWith('#story')) {
+        setCurrentView('story');
+        setSelectedCategory('all');
+        setActiveItemForModal(null);
+      } else if (hash.startsWith('#menu')) {
+        setCurrentView('menu');
+        const parts = hash.split('/');
+        let cat = 'all';
+        let itemId: string | null = null;
+        if (parts.length > 1 && parts[1]) {
+          cat = parts[1];
+        }
+        if (parts.length > 3 && parts[2] === 'item' && parts[3]) {
+          itemId = parts[3];
+        }
+        setSelectedCategory(cat);
+        if (itemId) {
+          const item = MENU_ITEMS.find((i) => i.id === itemId);
+          setActiveItemForModal(item || null);
+        } else {
+          setActiveItemForModal(null);
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    // Initialize on mount
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   // Set the top scroll on view change to maintain high quality feel
@@ -84,13 +93,34 @@ export default function App() {
 
   // Category routing trigger from homepage cards
   const handleNavigateToCategory = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentView('menu');
+    // If navigating from home, push menu first so back button returns to menu
+    if (!window.location.hash || window.location.hash.startsWith('#home')) {
+      window.history.pushState(null, '', '#menu');
+    }
+    window.location.hash = `#menu/${category}`;
   };
 
   // Nav trigger for standard switches
   const handleNavigateToView = (view: 'home' | 'menu' | 'story') => {
-    setCurrentView(view);
+    if (view === 'home') {
+      window.location.hash = '#home';
+    } else if (view === 'story') {
+      window.location.hash = '#story';
+    } else {
+      window.location.hash = '#menu';
+    }
+  };
+
+  const handleSetActiveItemForModal = (item: MenuItem | null) => {
+    if (item) {
+      window.location.hash = `#menu/${selectedCategory}/item/${item.id}`;
+    } else {
+      if (window.location.hash.includes('/item/')) {
+        window.history.back();
+      } else {
+        window.location.hash = `#menu/${selectedCategory}`;
+      }
+    }
   };
 
   return (
@@ -102,30 +132,6 @@ export default function App() {
         <div className="absolute top-[45%] right-[-10%] w-[60vw] h-[60vw] max-w-[700px] rounded-full bg-antique-gold/[0.02] blur-[140px] animate-float-reverse" />
         <div className="absolute bottom-[5%] left-[-5%] w-[45vw] h-[45vw] max-w-[500px] rounded-full bg-[#dfaf65]/[0.02] blur-[100px] animate-pulse-slow" />
       </div>
-
-      {/* Luxury Desk Custom Cursor follower */}
-      {!isTouchDevice && (
-        <>
-          <div
-            className="custom-cursor hidden md:block"
-            style={{
-              left: `${mousePosition.x}px`,
-              top: `${mousePosition.y}px`
-            }}
-          />
-          <div
-            className="custom-cursor-follower hidden md:block"
-            style={{
-              left: `${mousePosition.x}px`,
-              top: `${mousePosition.y}px`,
-              width: cursorHovered ? '54px' : '32px',
-              height: cursorHovered ? '54px' : '32px',
-              backgroundColor: cursorHovered ? 'rgba(199, 154, 82, 0.05)' : 'transparent',
-              borderColor: cursorHovered ? '#C79A52' : 'rgba(199, 154, 82, 0.35)'
-            }}
-          />
-        </>
-      )}
 
       {/* Dynamic Top Sticky Header Navigation */}
       <Navbar
@@ -155,11 +161,13 @@ export default function App() {
             {currentView === 'menu' && (
               <MenuView
                 selectedCategory={selectedCategory}
-                onSelectCategory={setSelectedCategory}
+                onSelectCategory={(category) => {
+                  window.location.hash = `#menu/${category}`;
+                }}
                 savedFeastIds={savedFeastIds}
                 onToggleFeastItem={handleToggleFeastItem}
                 activeItemForModal={activeItemForModal}
-                onSetActiveItemForModal={setActiveItemForModal}
+                onSetActiveItemForModal={handleSetActiveItemForModal}
               />
             )}
             {currentView === 'story' && (
@@ -180,8 +188,8 @@ export default function App() {
         {/* Global links */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-8">
           {[
-            { label: 'Our Story', action: () => setCurrentView('story') },
-            { label: 'Full Menu', action: () => setCurrentView('menu') },
+            { label: 'Our Story', action: () => handleNavigateToView('story') },
+            { label: 'Full Menu', action: () => handleNavigateToView('menu') },
             { label: 'Privacy Policy', action: () => {} }
           ].map((link, idx) => (
             <button
@@ -211,8 +219,7 @@ export default function App() {
             <button
               key={tab.id}
               onClick={() => {
-                if (tab.id === 'menu') setSelectedCategory('all');
-                setCurrentView(tab.id as any);
+                handleNavigateToView(tab.id as any);
               }}
               className={`flex flex-col items-center justify-center py-2 shrink-0 transition-all cursor-pointer w-1/3 ${
                 isActive

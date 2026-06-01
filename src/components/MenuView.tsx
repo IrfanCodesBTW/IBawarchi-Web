@@ -411,23 +411,26 @@ export const MenuView: React.FC<MenuViewProps> = ({
       {/* 4. MODAL: Detailed Culinary Masterpiece Visualizer Explorer */}
       <AnimatePresence>
         {activeItemForModal && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-md">
+          <div 
+            className="fixed inset-0 z-[100] flex items-center justify-center p-6 md:p-4 bg-black/95 backdrop-blur-md cursor-pointer"
+            onClick={() => onSetActiveItemForModal(null)}
+          >
             
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-2xl bg-[#0B0705] border border-white/10 p-8 shadow-[0_25px_60px_rgba(0,0,0,0.95)] rounded-2xl flex flex-col md:flex-row gap-8 relative max-h-[95vh] overflow-y-auto"
+              className="w-[92%] max-w-2xl bg-[#0B0705] border border-white/10 p-6 md:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.95)] rounded-2xl flex flex-col md:flex-row gap-6 md:gap-8 relative max-h-[85vh] md:max-h-[95vh] overflow-y-auto cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Cross Trigger */}
               <button
                 onClick={() => onSetActiveItemForModal(null)}
-                className="absolute top-5 right-5 text-stone-400 hover:text-antique-gold hover:rotate-90 transition-all p-2.5 bg-white/5 hover:bg-white/10 rounded-full cursor-pointer z-20"
+                className="absolute top-4 right-4 md:top-5 md:right-5 text-stone-300 hover:text-antique-gold hover:rotate-90 transition-all p-3 md:p-2.5 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer z-20"
                 title="Close modal"
               >
-                <X size={15} />
+                <X size={18} />
               </button>
 
               {/* Left side: Golden Mask Nizami Arch image container */}

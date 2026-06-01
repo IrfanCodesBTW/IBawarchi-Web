@@ -833,6 +833,7 @@
   --font-sans: "Hanken Grotesk", system-ui, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
   --font-subheader: "Space Grotesk", sans-serif;
+  --font-display: "Pinyon Script", "Playfair Display", Georgia, serif;
 
   --color-deep-charcoal: #0B0705;
   --color-antique-gold: #C79A52;
@@ -900,36 +901,6 @@
 .pointed-arch-box {
   border-top-left-radius: 50% 18%;
   border-top-right-radius: 50% 18%;
-}
-
-/* Custom Cursor styling support for non-touch screens */
-@media (hover: hover) and (pointer: fine) {
-  .custom-cursor {
-    width: 8px;
-    height: 8px;
-    background-color: #C79A52;
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-  }
-  .custom-cursor-follower {
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(199, 154, 82, 0.35);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 9998;
-    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
-                border-color 0.3s, 
-                background-color 0.3s;
-  }
 }
 
 /* Unified luxury glass card with high visual fidelity */

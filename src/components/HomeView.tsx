@@ -571,13 +571,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <MapPin size={12} className="animate-bounce" /> GHATKESAR HIGHWAY
               </span>
               <p className="font-sans text-xs text-stone-300 leading-relaxed font-light">
-                Near Bharat Petrol Pump, Warangal Highway. Aushapur, Ghatkesar Mandal, Hyderabad, Telangana 501301.
+                v .Ghatksar mandal, Near Bharat Petrol Pump. Warangal Highway . Aushapur, Hyderabad, Telangana 501301
               </p>
             </div>
             
             {/* Native google map iframe loaded with generic address coords */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.8115668101416!2d78.7183063!3d17.46825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb77df50000001%3A0xe726be6dfbb6edee!2sIndian%20Bawarchi%20Multicuisine%20Restaurant!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=17.461932,78.728603&hl=en&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
